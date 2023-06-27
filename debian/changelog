@@ -1,0 +1,5 @@
+power-profiles-daemon (0.13-2+nitrux) unstable; urgency=medium
+]
+  * Build without systemd.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Tue, 27 Jun 2023 14:48:00 -0500

@@ -1,0 +1,38 @@
+Source: power-profiles-daemon
+Section: admin
+Priority: optional
+Maintainer: Debian freedesktop.org maintainers <pkg-freedesktop-maintainers@lists.alioth.debian.org>
+Uploaders: Sebastien Bacher <seb128@ubuntu.com>
+Build-Depends: debhelper-compat (= 13),
+               libglib2.0-dev,
+               libgudev-1.0-dev,
+               libpolkit-gobject-1-dev,
+               libupower-glib-dev,
+               libudev-dev,
+               libumockdev-dev,
+               libxml2-utils,
+               meson,
+               python3-dbus <!nocheck>,
+               python3-dbusmock <!nocheck>,
+               python3-gi <!nocheck>,
+               umockdev <!nocheck>,
+Standards-Version: 4.6.2
+Vcs-Browser: https://salsa.debian.org/freedesktop-team/power-profiles-daemon
+Vcs-Git: https://salsa.debian.org/freedesktop-team/power-profiles-daemon.git
+Homepage: https://gitlab.freedesktop.org/hadess/power-profiles-daemon
+
+Package: power-profiles-daemon
+Architecture: linux-any
+Depends: ${misc:Depends}, ${shlibs:Depends},
+Description: Makes power profiles handling available over D-Bus.
+ power-profiles-daemon offers to modify system behaviour based upon
+ user-selected power profiles. There are 3 different power profiles, a
+ "balanced" default mode, a "power-saver" mode, as well as a "performance"
+ mode. The first 2 of those are available on every system. The "performance"
+ mode is only available on select systems and is implemented by different
+ "drivers" based on the system or systems it targets.
+ .
+ In addition to those 2 or 3 modes (depending on the system),
+ "actions" can be hooked up to change the behaviour of a particular device.
+ For example, this can be used to disable the fast-charging for some USB
+ devices when in power-saver mode.

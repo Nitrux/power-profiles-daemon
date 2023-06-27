@@ -17,7 +17,7 @@ jobs:
 
       - name: Install dependencies.
         run: |
-          sudo gem install package_cloud
+          apt install sudo && sudo gem install package_cloud
 
       - name: Build.
         run: |

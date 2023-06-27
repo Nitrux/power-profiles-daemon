@@ -6,8 +6,8 @@ set -x
 apt -qq -yy install equivs git devscripts lintian cmake --no-install-recommends
 
 ### Clone the source
-git clone --depth=1 https://gitlab.freedesktop.org/hadess/power-profiles-daemon.git src
-mv src/* . && rm -r src
+git clone --depth=1 https://gitlab.freedesktop.org/hadess/power-profiles-daemon.git power-profiles-daemon
+mv power-profiles-daemon/* . && rm -r power-profiles-daemon
 
 ### Install Dependencies
 mk-build-deps -i -t "apt-get --yes" -r

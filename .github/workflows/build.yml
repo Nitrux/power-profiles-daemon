@@ -15,9 +15,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Install dependencies.
-        run: |
-          apt update && apt install sudo && sudo gem install package_cloud
+      - name: Install basic packages
+        run: apt-get update -q && apt-get -qy install sudo && apt-get -qy install curl wget gnupg python3-pip patchelf build-essential ruby-full
+
+      - name: Install package cloud
+        run: gem install package_cloud
 
       - name: Build.
         run: |

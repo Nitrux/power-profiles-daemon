@@ -2,12 +2,12 @@
 
 set -x
 
+### Basic Packages
+apt -qq -yy install equivs git devscripts lintian cmake --no-install-recommends
+
 ### Clone the source
 git clone --depth=1 https://gitlab.freedesktop.org/hadess/power-profiles-daemon.git src
 mv src/* . && rm -r src
-
-### Basic Packages
-apt -qq -yy install equivs git devscripts lintian cmake --no-install-recommends
 
 ### Install Dependencies
 mk-build-deps -i -t "apt-get --yes" -r
